@@ -1,6 +1,7 @@
 const app = Vue.createApp({
   data() {
     return {
+      cart: 0,
       product: "Socks",
       image: "./assets/images/redsocks.png",
       url: "https://www.google.com",
@@ -14,5 +15,16 @@ const app = Vue.createApp({
       ],
       sizes: ["S", "M", "L", "XL"],
     };
+  },
+  methods: {
+    addToCart() {
+      this.cart += 1;
+    },
+    deleteFromCart() {
+      this.cart -= 1;
+    },
+    updateImage(variantImage) {
+      this.image = variantImage;
+    },
   },
 });
